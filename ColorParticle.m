@@ -1,8 +1,8 @@
 function  ColorParticle(X0, Index)
 
-    [~,dim] = size(X0);
+    [N,dim] = size(X0);
 
-    Title = sprintf('Particle index = %i', Index);
+    Title = sprintf("Particle index = %i, N = %i ", Index, N );
    
     p = figure;
    

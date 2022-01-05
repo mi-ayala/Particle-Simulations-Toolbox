@@ -5,7 +5,8 @@ function p = ParticlePlot(X0, varargin)
     if nargin == 2
         Title = varargin;
     else
-        Title = sprintf('N = %i', N);
+        %Title = sprintf('N = %i', N);
+        Title = [];
     end
    
     p = figure;

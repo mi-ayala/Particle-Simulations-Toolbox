@@ -1,4 +1,4 @@
-function p = ParticlePlot(X0, varargin)
+function p = ParticlePlot(X0, ax , varargin)
 
     [N,dim] = size(X0);
 
@@ -64,7 +64,11 @@ function p = ParticlePlot(X0, varargin)
     'YColor'      , 'none' );
     
     axis equal 
-    axis([-1 1 -1 1])
+    if ax = []
+     axis([-1 1 -1 1]);
+    else
+      axis(ax);
+    end  
     
     % Add labels
     hTitle = title(Title);

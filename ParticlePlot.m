@@ -64,7 +64,7 @@ function p = ParticlePlot(X0, ax , varargin)
     'YColor'      , 'none' );
     
     axis equal 
-    if ax = []
+    if isempty( ax ) 
      axis([-1 1 -1 1]);
     else
       axis(ax);

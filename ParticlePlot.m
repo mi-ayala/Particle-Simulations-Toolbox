@@ -19,9 +19,14 @@ function p = ParticlePlot(X0, varargin)
     
     elseif dim == 2
         
+%             scatter(X0(:,1),X0(:,2),125,'filled', ...
+%              'MarkerFaceAlpha',7/8, 'MarkerEdgeColor','k',...
+%              'MarkerFaceColor',[0 0.4470 0.7410] ); 
+
+   %%% Olafur Eliasson style
             scatter(X0(:,1),X0(:,2),125,'filled', ...
              'MarkerFaceAlpha',7/8, 'MarkerEdgeColor','k',...
-             'MarkerFaceColor',[0 0.4470 0.7410] ); 
+             'MarkerFaceColor','w' ); 
     
     elseif dim == 3
     
@@ -58,7 +63,8 @@ function p = ParticlePlot(X0, varargin)
     'ZColor'      , 'none', ...
     'YColor'      , 'none' );
     
-    axis equal  
+    axis equal 
+    axis([-1 1 -1 1])
     
     % Add labels
     hTitle = title(Title);
@@ -71,6 +77,7 @@ function p = ParticlePlot(X0, varargin)
     set([hXLabel, hYLabel], 'FontSize', 10)     
     set(hTitle, 'FontSize', 12, 'FontWeight' , 'bold','Color','#010206')
     
+    set(gca,'Color','k')
     set(gcf, 'InvertHardCopy','off')    
 
 end

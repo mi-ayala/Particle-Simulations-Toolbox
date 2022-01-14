@@ -2,7 +2,7 @@ function p = ParticlePlot(X0, ax , varargin)
 
     [N,dim] = size(X0);
 
-    if nargin == 2
+    if nargin == 3
         Title = varargin;
     else
         %Title = sprintf('N = %i', N);
@@ -27,7 +27,8 @@ function p = ParticlePlot(X0, ax , varargin)
             scatter(X0(:,1),X0(:,2),125,'filled', ...
              'MarkerFaceAlpha',7/8, 'MarkerEdgeColor','k',...
              'MarkerFaceColor','w' ); 
-    
+    brighten(.9);        
+  
     elseif dim == 3
     
             scatter3(X0(:,1),X0(:,2),X0(:,3),125,'filled', ...
@@ -63,6 +64,7 @@ function p = ParticlePlot(X0, ax , varargin)
     'ZColor'      , 'none', ...
     'YColor'      , 'none' );
     
+    %%% Axis
     axis equal 
     if isempty( ax ) 
      axis([-1 1 -1 1]);
@@ -70,12 +72,12 @@ function p = ParticlePlot(X0, ax , varargin)
       axis(ax);
     end  
     
-    % Add labels
+    %%% Add labels
     hTitle = title(Title);
     hXLabel = xlabel('x');
     hYLabel = ylabel('y');
     
-    % Adjust font
+    %%% Adjust font
     set(gca, 'FontName', 'Georgia')
     set([hTitle, hXLabel, hYLabel], 'FontName', 'Georgia')
     set([hXLabel, hYLabel], 'FontSize', 10)     
